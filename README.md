@@ -1,7 +1,7 @@
 MyExpress
 ====
 
-基于Node原生Http类开发而来，在不依赖任何第三方Node类库，就可以运行；
+基于Node原生Http类开发而来，在不依赖任何第三方Node类库时，就可以直接运行；
 
 Description
 ===========
