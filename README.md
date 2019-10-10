@@ -81,6 +81,16 @@ app.get('/test/middleware', (req, res, next) => {
 });
 ```
 
+Koa2
+====
+
+基于Node原生Http类开发而来，在不依赖任何第三方Node类库时，就可以直接运行；
+
+Description
+===========
+
+用于学习Koa2原理，语法与Koa2基本一致，已经实现Koa2圆葱模型与async阻塞调用，但是功能不全，只供学习参考；
+
 
 TestMyKoa2
 ========
