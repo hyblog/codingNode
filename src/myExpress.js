@@ -17,6 +17,7 @@ class MyExpress {
 
     // 注册路由与中间件
     static register(path) {
+        console.log(222);
         const info = {
             path: '/',
             stack: [] //middle func
@@ -44,6 +45,7 @@ class MyExpress {
     }
 
     use() {
+        console.log(111);
         this.routes.use.push(
             MyExpress.register.apply(this, arguments)
         );

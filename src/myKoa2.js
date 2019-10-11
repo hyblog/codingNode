@@ -18,6 +18,7 @@ function middlewareHandler(middlewareList) {
                 throw e;
             }
         }
+
         return dispatch(0);
     };
 }
@@ -37,10 +38,27 @@ class MyKoa2 {
 
     generateContext(req, res) {
         return {
+            req,
+            res,
             request: req,
             response: res
-
-            // alias ...
+            // request: new Proxy({}, {
+            //     get(target, p, receiver) {
+            //         return req[p] || undefined;
+            //     },
+            //     set(target, p, value, receiver) {
+            //         req[p] = value;
+            //
+            //     }
+            // }),
+            // response: new Proxy({}, {
+            //     get(target, p, receiver) {
+            //         return res[p] || undefined;
+            //     },
+            //     set(target, p, value, receiver) {
+            //         res[p] = value;
+            //     }
+            // }),
         }
     }
 

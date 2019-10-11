@@ -24,24 +24,36 @@ app.use(async function (ctx, next) {
     const startTs = new Date().getSeconds();
     console.log('第一次', 'start');
 
+    console.log(ctx.method);
+
+    ctx.method = 'POST';
+
     await next();
+
+    console.log(ctx.method, ctx.request.method);
 
     console.log('第一次', 'end');
     const endTs = new Date().getSeconds();
 
     console.log(`耗时：${endTs - startTs}s`);
-    ctx.response.end();
+
+    // TODO: this
+    ctx.res.end();
 });
 
 app.use(function (ctx, next) {
     console.log('第二次', 'start');
+
+    console.log(ctx.method);
+    console.log(ctx.req.method);
+
     next();
     console.log('第二次', 'end');
 });
 
-app.use(async function (ctx, next) {
+app.use(async function (ctx, next1) {
     console.log('第三次', 'start');
-    next();
+    next1();
     console.log('第三次', 'end');
 });
 
