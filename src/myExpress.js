@@ -8,16 +8,11 @@ class MyExpress {
         //this.session = new Map()
 
         // 注册路由与中间件
-        this.routes = {
-            use: [],
-            get: [],
-            post: []
-        }
+        this.routes = null;
     }
 
     // 注册路由与中间件
     static register(path) {
-        console.log(222);
         const info = {
             path: '/',
             stack: [] //middle func
@@ -45,7 +40,6 @@ class MyExpress {
     }
 
     use() {
-        console.log(111);
         this.routes.use.push(
             MyExpress.register.apply(this, arguments)
         );
@@ -165,7 +159,8 @@ class MyExpress {
             req.body = await this.body(req);    // 分装Post-Body函数
 
             // 获取已匹配路由的中间件
-            let middleStack = this.match(req, res);
+            this.routes = new Router(req, res)
+            let middleStack = .match(req, res);
             if (middleStack) {
                 this.handler(req, res, middleStack);
             }

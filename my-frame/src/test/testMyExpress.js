@@ -1,4 +1,4 @@
-const MyExpress = require('../src/myExpress');
+const MyExpress = require('../main/core/frame/server/express/myExpress');
 
 // 测试MyExpress框架Http服务注册（工厂模式）
 const app = MyExpress();
@@ -61,8 +61,10 @@ app.get('/test/middleware', (req, res, next) => {
     console.log('第四次');
     /* 停止调用 next(); */
 
-    next();
     // res.end("第四次");
+    next();
 }, function (req, res, next) {
     console.log('第五次'); // 不会执行！
+
+    res.end("第五次");
 });

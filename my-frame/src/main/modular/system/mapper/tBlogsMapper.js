@@ -1,6 +1,8 @@
 const MysqlBean = require('../../../config/mysqlBean');
 const TBlogs = require('../vo/tBlogs');
 
+
+
 module.exports = new class TBlogsMapper{
 
     constructor(){
