@@ -7,8 +7,8 @@
  */
 const http = require('http');
 
-const Body = require('./body');
-const Query = require('./query');
+const Body   = require('./body');
+const Query  = require('./query');
 const Cookie = require('./cookie');
 const Extend = require('./extend');
 const Router = require('./router');

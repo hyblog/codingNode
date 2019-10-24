@@ -38,8 +38,6 @@ class MyKoa2 {
 
     generateContext(req, res) {
         return {
-            req,
-            res,
             request: req,
             response: res
         }
